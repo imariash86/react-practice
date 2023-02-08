@@ -76,7 +76,10 @@ export const App = () => {
                 className={cd({
                   'is-active': userId === null,
                 })}
-                onClick={() => handleChangeUser(null)}
+                onClick={(event) => {
+                  event.preventDefault();
+                  handleChangeUser(null);
+                }}
               >
                 All
               </a>
@@ -87,7 +90,10 @@ export const App = () => {
                   className={cd({
                     'is-active': user.id === userId,
                   })}
-                  onClick={() => handleChangeUser(user)}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    handleChangeUser(user);
+                  }}
                   key={user.id}
                 >
                   {user.name}
@@ -116,7 +122,10 @@ export const App = () => {
                       data-cy="ClearButton"
                       type="button"
                       className="delete"
-                      onClick={() => setSearchField('')}
+                      onClick={(event) => {
+                        event.preventDefault();
+                        setSearchField('');
+                      }}
                     />
                   )}
 
