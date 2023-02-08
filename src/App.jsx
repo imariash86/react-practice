@@ -55,6 +55,11 @@ export const App = () => {
 
   const isVisibleProd = () => visibleProducts.length !== 0;
 
+  const handleResetAll = () => {
+    setUserId(null);
+    setSearchField('');
+  };
+
   return (
     <div className="section">
       <div className="container">
@@ -165,6 +170,7 @@ export const App = () => {
                 data-cy="ResetAllButton"
                 href="#/"
                 className="button is-link is-outlined is-fullwidth"
+                onClick={handleResetAll}
               >
                 Reset all filters
               </a>
